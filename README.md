@@ -3,8 +3,10 @@ Este projeto consiste no desenvolvimento de um jogo com o objetivo de aprender o
 
 <br><br>
 <div align="center">
-    <h2>Funcionalidades</h2>
-    <p>🔨 <em>Em construção</em></p>
+    <h2>🎲 Funcionalidades</h2>
+    <p>→ Jogo de adivinhação: O usuário deverá tentar acertar o número que o computador pensou</p>
+    <p>→ Jogo da forca: O usuário deverá tentar acertar a palavra</p>
+    <p>→ Pacman</p>
 </div>
 
 <br><br>
@@ -25,11 +27,11 @@ $ git clone https://github.com/Camilay3/JogoAdivinha
 
 ```bash
 # Navegue até a pasta
-> cd JogoAdivinha
+> cd JogosEmC
 
 # Pré-requisito: Compilador para C instalado
 
-# Execute o programa
-> gcc jogo.c -o jogo
-> ./jogo
+# Execute o arquivo do jogo que desejar, conforme o exemplo
+> gcc adivinhar.c -o adivinhar
+> ./adivinhar
 ```
