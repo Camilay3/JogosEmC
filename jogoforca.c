@@ -1,5 +1,20 @@
 #include <stdio.h>
 #include <string.h> /* Permite o strlen */
+#include <ctype.h>
+
+void exibicao() {
+    printf("------------------------------------\n");
+    printf("Boas vindas ao jogo de forca!\n");
+    printf("VocÍ dever· tentar acertar a palavra\n");
+    printf("------------------------------------\n");
+}
+
+void chuta(char * chutes, int tentativas) {
+    char chute;
+    printf("Digite seu chute: ");
+    scanf(" %c", &chute); /* O espa√ßo faz com que o Enter seja ignorado */
+    chutes[tentativas] = toupper(chute);
+}
 
 int main() {
     char palavraSecreta[20];
@@ -11,14 +26,10 @@ int main() {
     int tentativas = 0;
 
     char chutes[26];
-    char chute;
+
+    exibicao();
 
     do {
-        printf("Digite seu chute: ");
-        scanf(" %c", &chute); /* O espa√ßo faz com que o Enter seja ignorado */
-        chutes[tentativas] = chute;
-        tentativas++;
-
         printf("\n");
         for(size_t i = 0; i < strlen(palavraSecreta); i++) { /* Tipo correto para armazenar o retorno de strlen() */
 
@@ -38,6 +49,9 @@ int main() {
 
         }
         printf("\n");
+
+        chuta(chutes, tentativas);
+        tentativas++;
 
     } while (!acertou && !enforcou);
 }
