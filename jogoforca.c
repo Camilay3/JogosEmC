@@ -9,11 +9,12 @@ void exibicao() {
     printf("------------------------------------\n");
 }
 
-void chuta(char * chutes, int tentativas) {
+void chuta(char * chutes, int* tentativas) {
     char chute;
     printf("Digite seu chute: ");
-    scanf(" %c", &chute); /* O espaÃ§o faz com que o Enter seja ignorado */
-    chutes[tentativas] = toupper(chute);
+    scanf(" %c", &chute); /* O espaço faz com que o Enter seja ignorado */
+    chutes[(*tentativas)] = toupper(chute);
+    (*tentativas)++;
 }
 
 int main() {
@@ -50,8 +51,7 @@ int main() {
         }
         printf("\n");
 
-        chuta(chutes, tentativas);
-        tentativas++;
+        chuta(chutes, &tentativas);
 
     } while (!acertou && !enforcou);
 }
